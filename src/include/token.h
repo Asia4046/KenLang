@@ -20,6 +20,7 @@ typedef struct TOKEN_STRUCT{
         TOKEN_RIGHT_ARROW,
         TOKEN_INT,
         TOKEN_SEMI,
+        TOKEN_EOF,
 
     } type;
 
