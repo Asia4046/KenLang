@@ -1,4 +1,5 @@
 #include "include/lexer.h"
+#include "include/macros.h"
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
@@ -21,6 +22,11 @@ void lexer_advance(lexer_T* lexer)
         lexer->c = lexer->src[lexer->i];
     }
 } 
+
+char lexer_peek(lexer_T* lexer, int offset)
+{
+    return lexer->src[MIN(lexer->i + offset, lexer->src_size)];
+}
 
 token_T* lexer_advance_with(lexer_T* lexer, token_T* token)
 {
@@ -54,6 +60,17 @@ token_T* lexer_next_token(lexer_T* lexer)
     {
         if(isalpha(lexer->c))
             return lexer_advance_with(lexer, lexer_parse_id(lexer));
+
+        switch(lexer->c)
+        {
+            case '=': {
+                if(lexer_peek(lexer, 1) == '>') return lexer_advance_with(lexer, init_token("=>", TOKEN_ARROW_RIGHT));
+                return lexer_advance_with(lexer, init_token("=", TOKEN_EQUALS));
+            } break;
+            case '(': {
+                return lexer_advance_with(lexer, init_token("(", TOKEN_RBRACE));
+            }
+        }
     }
     
     return init_token(0, TOKEN_EOF);

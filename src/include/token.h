@@ -17,7 +17,7 @@ typedef struct TOKEN_STRUCT{
         TOKEN_COMMA,
         TOKEN_LT,
         TOKEN_GT,
-        TOKEN_RIGHT_ARROW,
+        TOKEN_ARROW_RIGHT,
         TOKEN_INT,
         TOKEN_SEMI,
         TOKEN_EOF,
