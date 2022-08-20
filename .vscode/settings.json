@@ -1,0 +1,10 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/nilesh/Desktop/kteam-project/ken_lang",
+            "binaryPath": "/home/nilesh/Desktop/kteam-project/ken_lang/ken",
+            "binaryArgs": []
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+make ken --dry-run --keep-going --print-directory
+make: Entering directory '/home/nilesh/Desktop/kteam-project/ken_lang'
+make: 'ken' is up to date.
+make: Leaving directory '/home/nilesh/Desktop/kteam-project/ken_lang'
+ 
