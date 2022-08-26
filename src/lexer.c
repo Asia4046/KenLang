@@ -85,6 +85,8 @@ token_T* lexer_next_token(lexer_T *lexer)
 {
     while (lexer->c != '\0')
     {
+        lexer_skip_whitespace(lexer);
+
         if (isalpha(lexer->c))
             return lexer_advance_with(lexer, lexer_parse_id(lexer));
 
